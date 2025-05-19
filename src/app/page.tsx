@@ -1,103 +1,149 @@
+import {buttonVariants} from "@src/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import {BlurBg} from "@src/components/blur-bg";
+import Constants from "@src/lib/constants";
+import {RevealFromBottom} from "@src/components/motions/reveal-from-bottom";
+import RevealImage from "@src/components/motions/reveal-image";
+import {BorderBeam} from "@src/components/magicui/border-beam";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    return (
+        <main className={"container mx-auto p-4"}>
+            <section className={"flex flex-col items-center gap-6 lg:gap-10 relative z-0"}>
+                <div className={"h-12 lg:h-20"}/>
+                <RevealFromBottom elt={'h1'}
+                                  className="scroll-m-20 text-2xl md:text-4xl font-bold tracking-tight lg:text-5xl text-center max-w-[870px]">
+                    Recovering the type corresponding to the response of your request will never have been easier.
+                </RevealFromBottom>
+                <RevealFromBottom elt={'p'}
+                                  className={"text-muted-foreground text-center max-w-[900px] text-base lg:text-xl"}
+                                  delay={0.4}>
+                    Just issue your query, at the end of it you will have both the response of your query and also the
+                    typing corresponding to the response of that query.
+                </RevealFromBottom>
+                <RevealFromBottom elt={'div'} delay={0.7}>
+                    <Link className={buttonVariants()} href={Constants.app_rul}>
+                        Make a request
+                    </Link>
+                </RevealFromBottom>
+                <div className={"h-5 lg:h-10"}/>
+                <RevealFromBottom delay={0.9} className={"w-full relative"}>
+                    <div className={"w-full overflow-hidden relative rounded-xl lg:rounded-3xl"}>
+                        <Image priority unoptimized src={"/tezonly-app-content-image.png"} alt={"Tezonly App content"}
+                               width={1071} height={584}
+                               className={"w-full h-auto aspect-auto"}/>
+                        <BorderBeam
+                            duration={6}
+                            size={400}
+                            className="from-transparent via-primary to-transparent"
+                        />
+                        <BorderBeam
+                            duration={6}
+                            delay={3}
+                            size={400}
+                            className="from-transparent via-primary to-transparent"
+                        />
+                    </div>
+                </RevealFromBottom>
+                <BlurBg/>
+            </section>
+            <section className={"py-14 lg:py-32 space-y-6 lg:space-y-20"}>
+                <RevealFromBottom elt={'h2'}
+                                  className="scroll-m-20 text-xl md:text-3xl font-bold tracking-tight lg:text-5xl text-center">How
+                    does it work?</RevealFromBottom>
+                {/* Step 1 */}
+                <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12"}>
+                    <div className={"relative z-0"}>
+                        <RevealImage step={'step1'} src={"/step-1-create-request-collection.png"}
+                                     alt={"Create request collection"}/>
+                    </div>
+                    <div className={"flex flex-col justify-center gap-4"}>
+                        <RevealFromBottom elt={'h3'}
+                                          className={'scroll-m-20 text-lg lg:text-3xl font-semibold tracking-tight'}>Create
+                            a request
+                            collection</RevealFromBottom>
+                        <RevealFromBottom elt={'p'} delay={0.3}
+                                          className={"text-lg lg:text-xl text-muted-foreground text-justify"}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </RevealFromBottom>
+                    </div>
+                </div>
+                {/* Step 2 */}
+                <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12"}>
+                    <div className={"flex flex-col justify-center gap-4 order-1 lg:order-0"}>
+                        <RevealFromBottom elt={'h3'}
+                                          className={'scroll-m-20 text-lg lg:text-3xl font-semibold tracking-tight'}>Add
+                            new
+                            request</RevealFromBottom>
+                        <RevealFromBottom elt={'p'} delay={0.3}
+                                          className={"text-lg lg:text-xl text-muted-foreground text-justify"}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </RevealFromBottom>
+                    </div>
+                    <div className={"relative z-0 order-0 lg:order-1"}>
+                        <RevealImage step={'step2'} src={"/step-2-add-new-request.png"}
+                                     alt={"Add new request"}
+                        />
+                    </div>
+                </div>
+                {/* Step 3 */}
+                <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12"}>
+                    <div className={"relative z-0"}>
+                        <RevealImage step={'step3'} src={"/step-3-chose-the-right-language.png"}
+                                     alt={"Chose the right language"}
+                        />
+                    </div>
+                    <div className={"flex flex-col justify-center gap-4"}>
+                        <RevealFromBottom elt={'h3'}
+                                          className={'scroll-m-20 text-lg lg:text-3xl font-semibold tracking-tight'}>Chose
+                            the right
+                            language</RevealFromBottom>
+                        <RevealFromBottom elt={"p"} className={"text-lg lg:text-xl text-muted-foreground text-justify"}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </RevealFromBottom>
+                    </div>
+                </div>
+                {/* Step 2 */}
+                <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12"}>
+                    <div className={"flex flex-col justify-center gap-4 order-1 lg:order-0"}>
+                        <RevealFromBottom elt={'h3'}
+                                          className={'scroll-m-20 text-lg lg:text-3xl font-semibold tracking-tight'}>Copy
+                            the type and
+                            enjoy</RevealFromBottom>
+                        <RevealFromBottom elt={"p"} delay={0.3}
+                                          className={"text-lg lg:text-xl text-muted-foreground text-justify"}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </RevealFromBottom>
+                    </div>
+                    <div className={"relative z-0 order-0 lg:order-1"}>
+                        <RevealImage step={'step4'} src={"/step-4-copy-the-type-and-enjoy.png"}
+                                     alt={"Copy the type and enjoy"}
+                        />
+                    </div>
+                </div>
+            </section>
+            <section className={"py-8 lg:py-16 flex flex-col justify-center items-center gap-10"}>
+                <RevealFromBottom elt={'p'}
+                                  className={"text-xl lg:text-3xl text-muted-foreground text-justify lg:text-center max-w-[1000px]"}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                </RevealFromBottom>
+                <RevealFromBottom delay={0.3}>
+                    <Link href={Constants.app_rul} className={buttonVariants()}>
+                        Make my request
+                    </Link>
+                </RevealFromBottom>
+            </section>
+        </main>
+    );
 }
