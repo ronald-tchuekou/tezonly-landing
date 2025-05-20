@@ -8,7 +8,7 @@ function Header() {
     return (
         <header className={"flex justify-between items-center container mx-auto p-4"}>
             <Link href={"/"}>
-                <Image src={"/tezonly-inline-logo.png"} alt={"Tezonly Logo"} height={"61"} width={"204"}
+                <Image src={"/tezonly-inline-logo.webp"} alt={"Tezonly Logo"} height={"61"} width={"204"}
                        className={"aspect-auto h-10 w-auto"}/>
             </Link>
             <Link href={Constants.app_rul} className={buttonVariants()}>

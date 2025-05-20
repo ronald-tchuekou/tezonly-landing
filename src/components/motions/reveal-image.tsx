@@ -12,9 +12,11 @@ type Props = {
     src: string;
     alt: string;
     step: 'step1' | 'step2' | 'step3' | 'step4'
+    width: number
+    height: number
 }
 
-const RevealImage = ({src, alt, step}: Props) => {
+const RevealImage = ({src, alt, step, height, width}: Props) => {
     const largePetalRef = useRef<LargePetalRef>(null)
     const mediumPetalRef = useRef<MediumPetalRef>(null)
     const divRef = useRef(null)
@@ -67,7 +69,7 @@ const RevealImage = ({src, alt, step}: Props) => {
                     }}>
                     <Image unoptimized priority src={src}
                            alt={alt}
-                           width={459} height={219} className={"w-full max-w-[459px] h-auto aspect-video"}/>
+                           width={width} height={height} className={"w-full max-w-[459px] h-auto aspect-video"}/>
                     <BorderBeam
                         duration={6}
                         size={200}

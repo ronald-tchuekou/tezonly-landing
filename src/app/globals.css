@@ -11,7 +11,7 @@
     --popover: oklch(0.24 0.01 223.82);
     --popover-foreground: oklch(1.00 0 0);
     --primary: oklch(0.82 0.08 239.84);
-    --primary-foreground: oklch(0.39 0.02 229.34);
+    --primary-foreground: oklch(0.252 0.012 237.143);
     --secondary: oklch(0.30 0.02 238.76);
     --secondary-foreground: oklch(1.00 0 0);
     --muted: oklch(0.39 0.02 229.34);
@@ -123,26 +123,26 @@
     --color-destructive-foreground: var(--destructive-foreground);
     --animate-shine: shine var(--duration) infinite linear;
 
-  @keyframes shine {
-    0% {
-      background-position: 0% 0%;
+    @keyframes shine {
+        0% {
+            background-position: 0% 0%;
         }
-    50% {
-      background-position: 100% 100%;
+        50% {
+            background-position: 100% 100%;
         }
-    to {
-      background-position: 0% 0%;
+        to {
+            background-position: 0% 0%;
         }
     }
-  @keyframes shine {
-  0% {
-    background-position: 0% 0%;
+    @keyframes shine {
+        0% {
+            background-position: 0% 0%;
         }
-  50% {
-    background-position: 100% 100%;
+        50% {
+            background-position: 100% 100%;
         }
-  to {
-    background-position: 0% 0%;
+        to {
+            background-position: 0% 0%;
         }
     }
 }
