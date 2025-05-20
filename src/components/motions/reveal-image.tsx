@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useEffect, useRef} from 'react';
-import {motion, useAnimation, useInView, useMotionValue} from "framer-motion";
+import {motion, useAnimation, useInView} from "framer-motion";
 import Image from "next/image";
 import LargePetal, {LargePetalRef} from "@src/components/motions/large-petal";
 import MediumPetal, {MediumPetalRef} from "@src/components/motions/medium-petal";
@@ -21,7 +21,6 @@ const RevealImage = ({src, alt, step}: Props) => {
 
     const isInView = useInView(divRef, {once: true})
     const controls = useAnimation()
-    const opacity = useMotionValue(0)
 
     useEffect(() => {
         if (isInView) {
