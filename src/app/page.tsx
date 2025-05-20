@@ -27,7 +27,7 @@ export default function Home() {
                         Make a request
                     </Link>
                 </RevealFromBottom>
-                <div className={"h-5 lg:h-10"}/>
+                <div className={"h-5"}/>
                 <RevealFromBottom delay={0.9} className={"w-full relative"}>
                     <div className={"w-full overflow-hidden relative rounded-xl lg:rounded-3xl"}>
                         <Image priority unoptimized src={"/tezonly-app-content-image.webp"} alt={"Tezonly App content"}
